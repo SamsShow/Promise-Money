@@ -670,3 +670,8 @@ h4 {
   font-size: 1.5rem;
   font-weight: 400;
 }
+
+.bottom-btn{
+  text-decoration: none;
+  color: white;
+}
