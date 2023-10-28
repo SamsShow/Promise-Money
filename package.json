@@ -7,7 +7,8 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "express": "^4.18.2",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "open": "^9.1.0"
   },
   "name": "promise-money",
   "description": "Promise Money is a web application designed to facilitate and record financial transactions between businesses (shopkeepers) and customers. The application focuses on promoting transparency, trust, and responsible financial behavior. It offers features such as Loan and Pay Later Tracking, Credit Scoring, Automated Reminders, and an Auto-Pay System. This README provides an overview of the project, its potential impact, and technical details.",
