@@ -61,6 +61,7 @@ body {
     display: grid;
     gap: 50px;
     padding: 3rem 1rem 1rem 0rem;
+    align-content: start;
 }
 
 .profile {
@@ -169,4 +170,17 @@ body {
 
 .outgoing .top4-item {
     background-color: var(--color-tertiary-darker);
+}
+
+.transactions {
+    display: grid;
+    align-content: start;
+    grid-column: repeat(4, 1fr);
+    background-color: #f3f3f3;
+}
+
+.transactions tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
 }

@@ -7,13 +7,12 @@
     <title>Transactions</title>
 </head>
 <body>
-    <!--Code for a page that shows all the transactions of a user-->
     <div class="body">
         <div class="sidebar">
             <button class="sidebar-item">Home</button>
             <button class="sidebar-item">Account</button>
             <button class="sidebar-item">Profile</button>
-            <button class="sidebar-item">Transactions</button>
+            <button class="sidebar-item selected">Transactions</button>
         </div>
         <div class="content">
             <div class="profile">
@@ -45,27 +44,25 @@
             </div>
             </div>
             <div class="transactions">
-                <div class="top4-section">
-                    <div class="top4-heading">To pay</div>
-                    <div class="top4-list outgoing">
-                        <div class="top4-item">
-                            <span class="top4-item-name">Rudraksh</span>
-                            <span class="top4-item-balance">1000</span>
-                        </div>
-                        <div class="top4-item">
-                            <span class="top4-item-name">Rudraksh</span>
-                            <span class="top4-item-balance">1000</span>
-                        </div>
-                        <div class="top4-item">
-                            <span class="top4-item-name">Rudraksh</span>
-                            <span class="top4-item-balance">1000</span>
-                        </div>
-                        <div class="top4-item">
-                            <span class="top4-item-name">Rudraksh</span>
-                            <span class="top4-item-balance">1000</span>
-                        </div>
-                    </div>
-                </div>
+                <table>
+                    <tr class="heading-row">
+                    <th class="heading">Name</th>
+                    <th class="heading">Amount</th>
+                    <th class="heading">Date</th>
+                    <th class="heading">Status</th>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction">Rudraksh</td>
+                        <td class="transaction">1000</td>
+                        <td class="transaction">12/12/2020</td>
+                        <td class="transaction">Paid</td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction">Rudraksh</td>
+                        <td class="transaction">1000</td>
+                        <td class="transaction">12/12/2020</td>
+                        <td class="transaction">Paid</td>
+                </table>
             </div>
 
 </body>
