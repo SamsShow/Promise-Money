@@ -32,7 +32,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // Use the provided port or 3000 as a default
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
