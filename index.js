@@ -5,6 +5,8 @@ const port = 3000
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('interface'));
+
 // GETTING ROUTES
 const userRoutes = require('./server/routes/index.js');
 app.use('/', userRoutes);
