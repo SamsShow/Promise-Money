@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 const url="mongodb+srv://naveen:reliance@cluster0.1zo1yba.mongodb.net/?retryWrites=true&w=majority"
 const client = new MongoClient(url);
-
+const ejs= require('ejs')
 const path = require('path')
 const bcrypt = require('bcrypt')
 
@@ -44,10 +44,11 @@ exports.login = async (req, res) => {
     const {email, password}= req.body;
     const user = await collection.findOne({email: email})
 
+
     const match = await bcrypt.compare(password, user.hashedPassword);
     if(match){
-      console.log('login ho gya')
-      res.redirect('/dashboard')
+
+      res.redirect('/dashboard/'+email)
       
     }
   }
@@ -57,35 +58,27 @@ exports.login = async (req, res) => {
   await client.close();
   
 };
-exports.showDashboard=(req , res)=>{
-  console.log('showing dashboard')
-  // res.send(path.join(__dirname, "../../interface/dashboard.html" ))
-  return res.status(200).sendFile(path.join(__dirname, "../../interface/dashboard.html" ));
+exports.showDashboard= async (req , res)=>{
+
+  try{
+    await client.connect();
+    const db = client.db("Cluster0");
+    const users = db.collection("users");
+    const email = req.params.email;
+    console.log(email)
+    const user = await users.findOne({ email: email });
+    console.log(user)
+
+    ejs.renderFile(path.resolve(__dirname, '../../interface/dashboard.ejs'), {user},function(err, str){
+       res.send(str)
+  })
+    
+  }
+  catch(err){
+    console.log(err);
+  }
+  // return res.status(200).sendFile(path.join(__dirname, "../../interface/dashboard.html" ));
+  
+  await client.close();
+
 }
-
-// exports.signup = async (req, res) => {
-//   const { username, email, password } = req.body;
-//   const hashedPassword = bcrypt.hashSync(password, 10);
-//   if (!username || !email || !password) {
-//     return res.status(400).send("Please fill in all fields.");
-//   }
-//   try {
-
-//     await client.connect();
-//     console.log("Successfully connected to mongodb atlas");
-//     const db = client.db("Cluster0");
-//     const collection = db.collection("users");
-//     const user = {
-//       username,
-//       email,
-//       hashedPassword,
-//     };
-//     console.log(user);
-//     const result = await collection.insertOne(user);
-//     console.log("Result got saved with id_" + result.insertedId);
-//     await client.close();
-//   } catch (err) {
-//     console.log(err);
-//   }
-//   res.redirect("/loginform");
-// };
