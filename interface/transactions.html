@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+  --color-primary-darker: #4bbb7d;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary-darker: #fd424b;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+  --color-tertiary-opacity: #ff58602d;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #444;
+    background-color: #f3f3f3;
+}
+
+.body {  
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.sidebar {
+    display: grid;
+    min-width: 200px;
+    background-color: darkslategrey;
+    align-content: center;
+    gap: 1.5rem;
+    -webkit-text-fill-color: whitesmoke;
+}
+
+.sidebar-item {
+    background-color: inherit;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    min-height: 50px;
+}
+
+.selected {
+    background-color: whitesmoke;
+    border-radius: 15px;
+    min-width: 175px;
+    -webkit-text-fill-color: darkslategrey;
+    justify-self: center;
+}
+
+.content {
+    display: grid;
+    gap: 50px;
+    padding: 3rem 1rem 1rem 0rem;
+    align-content: start;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    max-height: 200px;
+    align-items: end;
+}
+
+.left {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.greeting {
+    font-size: 1.1rem;
+}
+
+.username {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.user-balance {
+    font-size: 1.5rem;
+    font-weight: 300;
+    grid-row: 3;
+}
+
+.right {
+    display: grid;
+    gap: 10px;
+}
+
+.right-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.payments {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 5px;
+}
+
+.payment {
+    display: grid;
+    gap: 15px;
+}
+
+.payment-card {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.payment-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.payment-amount {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.top4 {
+    display: grid;
+    gap: 10px;
+    
+}
+
+.top4-section {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+}
+
+.top4-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.top4-item {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-column: span 1;
+    grid-row: span 1;
+    padding: 1rem;
+    padding-bottom: 0;
+    border-radius: 10px;
+    min-height: 125px;
+    -webkit-text-fill-color: #f3f3f3;
+    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.362);
+}
+
+.top4-item-balance {
+    font-size: 2.5rem;
+}
+
+.incoming .top4-item {
+    background-color: var(--color-primary-darker);
+}
+
+.outgoing .top4-item {
+    background-color: var(--color-tertiary-darker);
+}
+
+.transactions {
+    display: grid;
+    align-content: start;
+    grid-column: repeat(4, 1fr);
+    background-color: #f3f3f3;
+}
+
+.transactions tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
+}
+    </style>
+    </style>
+    <title>Transactions</title>
+</head>
+<body>
+    <div class="body">
+        <div class="sidebar">
+            <button class="sidebar-item">Dashboard</button>
+            <button class="sidebar-item">Account</button>
+            <button class="sidebar-item">Profile</button>
+            <button class="sidebar-item selected">Transactions</button>
+        </div>
+        <div class="content">
+            <div class="profile">
+                <div class="left">
+                    <span class="greeting">Welcome</span>
+                    <span class="profile-picture"></span>
+                    <span class="username">Rudraksh</span>
+                    <span class="user-balance">Current balance: </span>
+                </div>
+                <div class="right">
+                    <div class="right-heading">Coming payments:</div>
+                    <div class="payments">
+                        <div class="payment">
+                            <span class="payment-heading">To Pay</span>
+                            <div class="payment-card outgoing">
+                                <span class="to">To: </span>
+                                <span class="payment-amount">1000</span>
+                            </div>
+                        </div>
+                        <div class="payment">
+                            <span class="payment-heading">To Collect</span>
+                            <div class="payment-card incoming">
+                                <span class="to">To: </span>
+                                <span class="payment-amount">1000</span>
+                            </div>
+                        </div>
+                    </div>
+                     
+            </div>
+            </div>
+            <div class="transactions">
+                <table>
+                    <tr class="heading-row">
+                    <th class="heading">Name</th>
+                    <th class="heading">Amount</th>
+                    <th class="heading">Date</th>
+                    <th class="heading">Status</th>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction">Rudraksh</td>
+                        <td class="transaction">1000</td>
+                        <td class="transaction">12/12/2020</td>
+                        <td class="transaction">Paid</td>
+                    </tr>
+                    <tr class="transaction-row">
+                        <td class="transaction">Rudraksh</td>
+                        <td class="transaction">1000</td>
+                        <td class="transaction">12/12/2020</td>
+                        <td class="transaction">Paid</td>
+                </table>
+            </div>
+
+</body>
+</html>
