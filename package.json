@@ -3,5 +3,20 @@
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5"
-  }
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  },
+  "name": "promise-money",
+  "description": "Promise Money is a web application designed to facilitate and record financial transactions between businesses (shopkeepers) and customers. The application focuses on promoting transparency, trust, and responsible financial behavior. It offers features such as Loan and Pay Later Tracking, Credit Scoring, Automated Reminders, and an Auto-Pay System. This README provides an overview of the project, its potential impact, and technical details.",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js",
+    "start": "nodemon index.js"
+  },
+  "author": "nave",
+  "license": "ISC"
 }
