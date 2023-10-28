@@ -7,97 +7,86 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <!-- <header class="header">
-      <nav class="nav">
-        <img
-          src="../img/Group 4.png"
-          alt="Bankist logo"
-          class="nav__logo"
-          id="logo"
-        />
-        <ul class="nav__links">
-          <li class="nav__item">
-            <a class="nav__link" href="#section--1">Features</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#section--2">Operations</a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link nav__link--btn btn--show-modal" href="#"
-              >Open account</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header> -->
     <div class="body">
-        <div class="profile">
-            <div class="left">
-                <span class="greeting">Welcome</span>
-                <span class="profile-picture"></span>
-                <span class="username">Rudraksh</span>
-                <span class="user-balance">Current balance: </span>
+        <div class="sidebar">
+            <button class="sidebar-item selected">Home</button>
+            <button class="sidebar-item">Account</button>
+            <button class="sidebar-item">Profile</button>
+            <button class="sidebar-item">Settings</button>
+        </div>
+        <div class="content">
+            <div class="profile">
+                <div class="left">
+                    <span class="greeting">Welcome</span>
+                    <span class="profile-picture"></span>
+                    <span class="username">Rudraksh</span>
+                    <span class="user-balance">Current balance: </span>
+                </div>
+                <div class="right">
+                    <div class="right-heading">Coming payments:</div>
+                    <div class="payments">
+                        <div class="payment">
+                            <span class="payment-heading">To Pay</span>
+                            <div class="payment-card outgoing">
+                                <span class="to">To: </span>
+                                <span class="payment-amount">1000</span>
+                            </div>
+                        </div>
+                        <div class="payment">
+                            <span class="payment-heading">To Collect</span>
+                            <div class="payment-card incoming">
+                                <span class="to">To: </span>
+                                <span class="payment-amount">1000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
             </div>
-            <div class="right">
-                <div class="right-heading">Coming payments:</div>
-                <div class="payments">
-                    <div class="payment outgoing">
-                        <span class="payment-heading">Pay</span>
-                        <div class="payment-card">
-                            <span class="to">To: </span>
-                            <span class="payment-amount">1000</span>
+            </div>
+            <div class="top4">
+                <div class="top4-section">
+                    <div class="top4-heading">To pay</div>
+                    <div class="top4-list outgoing">
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
+                        </div>
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
+                        </div>
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
+                        </div>
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
                         </div>
                     </div>
-                    <div class="payment incoming">
-                        <span class="payment-heading">Collect</span>
-                        <div class="payment-card">
-                            <span class="to">To: </span>
-                            <span class="payment-amount">1000</span>
+                </div>
+                <div class="top4-section">
+                    <div class="top4-heading">To Collect</div>
+                    <div class="top4-list incoming">
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
+                        </div>
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
+                        </div>
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
+                        </div>
+                        <div class="top4-item">
+                            <span class="top4-item-name">Rudraksh</span>
+                            <span class="top4-item-balance">1000</span>
                         </div>
                     </div>
                 </div>
-                
-        </div>
-        </div>
-        <div class="top4">
-                <div class="top4-heading">To pay</div>
-                <div class="top4-list outgoing">
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                </div>
-                <div class="top4-heading">To Collect</div>
-                <div class="top4-list incoming">
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                    <div class="top4-item">
-                        <span class="top4-item-name">Rudraksh</span>
-                        <span class="top4-item-balance">1000</span>
-                    </div>
-                </div>
+            </div>
         </div>
     </div>
 </body>
