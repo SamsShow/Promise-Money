@@ -46,6 +46,7 @@ exports.login = async (req, res) => {
 
     const match = await bcrypt.compare(password, user.hashedPassword);
     if(match){
+      console.log('login ho gya')
       res.redirect('/dashboard')
       
     }
@@ -57,7 +58,9 @@ exports.login = async (req, res) => {
   
 };
 exports.showDashboard=(req , res)=>{
-  return res.status(200).sendFile(path.join(__dirname, "../../interface/dashboard/dashboard.html" ));
+  console.log('showing dashboard')
+  // res.send(path.join(__dirname, "../../interface/dashboard.html" ))
+  return res.status(200).sendFile(path.join(__dirname, "../../interface/dashboard.html" ));
 }
 
 // exports.signup = async (req, res) => {
