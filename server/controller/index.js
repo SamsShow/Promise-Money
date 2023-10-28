@@ -1,24 +1,60 @@
+const { MongoClient } = require("mongodb");
+const url="mongodb+srv://naveen:reliance@cluster0.1zo1yba.mongodb.net/?retryWrites=true&w=majority"
+const client = new MongoClient(url);
+
 const path = require('path')
 const bcrypt = require('bcrypt')
 
 exports.getLandingPage = (req, res) => {
     return res.status(200).sendFile(path.join(__dirname, "../../interface/index.html" ));
 }
-exports.signup = (req, res)=>{
-  console.log(req.body)
-  const { name, email, phone, DOB, address, password} = req.body;
+exports.signup = async (req, res)=>{
+  const { name, email, phone, dob, address, password} = req.body;
   const hashedPassword = bcrypt.hashSync(password, 10);
   const user={
     name,
     email,
     phone,
-    DOB,
+    dob,
     address,
     hashedPassword
   }
-  console.log(user)
-  console.log(hashedPassword)
+  try{
+    await client.connect();
+    console.log("Successfully connected to mongodb atlas");
+    const db = client.db("Cluster0");
+    const collection = db.collection("users");
+    const result = await collection.insertOne(user);
+    res.status(200).send("hello")
+    await client.close();
+  }
+  catch(err){
+     console.log(err);
+  }
 }
+
+exports.login = async (req, res) => {
+
+  try{
+    await client.connect();
+    console.log("Successfully connected to mongodb atlas");
+    const db = client.db("Cluster0");
+    const collection = db.collection("users");
+    
+    const {email, password}= req.body;
+    const user = await collection.findOne({email: email})
+
+    const match = await bcrypt.compare(password, user.hashedPassword);
+    if(match){
+      res.send("<h1>hello<h1>")
+    }
+  }
+  catch(err){
+    console.log(err);
+  }
+  await client.close();
+  
+};
 
 // exports.signup = async (req, res) => {
 //   const { username, email, password } = req.body;
