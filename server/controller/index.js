@@ -46,7 +46,8 @@ exports.login = async (req, res) => {
 
     const match = await bcrypt.compare(password, user.hashedPassword);
     if(match){
-      res.send("<h1>hello<h1>")
+      res.redirect('/dashboard')
+      
     }
   }
   catch(err){
@@ -55,6 +56,9 @@ exports.login = async (req, res) => {
   await client.close();
   
 };
+exports.showDashboard=(req , res)=>{
+  return res.status(200).sendFile(path.join(__dirname, "../../interface/dashboard/dashboard.html" ));
+}
 
 // exports.signup = async (req, res) => {
 //   const { username, email, password } = req.body;

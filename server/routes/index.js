@@ -1,9 +1,8 @@
 const express = require("express")
 const userRouter = express.Router()
-const {getLandingPage , login, signup, sendLoginFile, sendSignUpFile} = require('../controller/index.js')
+const {getLandingPage , login, signup, showDashboard} = require('../controller/index.js')
 userRouter.get('/landingpage', getLandingPage)
-// .get('/loginform', sendLoginFile)
-// .get('/signupform', sendSignUpFile)
+.get('/dashboard', showDashboard)
 .post('/signup', signup)
 .post('/login', login)
 
