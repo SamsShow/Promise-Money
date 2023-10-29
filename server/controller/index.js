@@ -35,9 +35,6 @@ exports.signup = async (req, res)=>{
 exports.login = async (req, res) => {
 
   try{
-    console.log('login me hu')
-    console.log(req.body)
-    
     const {email, password}= req.body;
     const user = await User.findOne({email: email})
 
@@ -48,9 +45,12 @@ exports.login = async (req, res) => {
       res.redirect('/dashboard/'+email)
       
     }
+    else{
+      res.send('<h1>Wrong Credentials<h1>')
+    }
   }
   catch(err){
-    console.log(err);
+    res.status(400).send(err);
   }
 
   
