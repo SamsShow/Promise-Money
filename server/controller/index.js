@@ -15,7 +15,8 @@ exports.getLandingPage = (req, res) => {
 }
 exports.signup = async (req, res)=>{
 
-  const { name, email, phone, dob, address, password} = req.body;
+  const { name, email, phone, dob, Aadhar, address, password} = req.body;
+  console.log(req.body)
 
   const hashedPassword = bcrypt.hashSync(password, 10);
    const user = new User({
@@ -23,9 +24,11 @@ exports.signup = async (req, res)=>{
     email,
     phone,
     dob,
+    Aadhar,
     address,
     hashedPassword: hashedPassword // Store the hashed password
   })
+  console.log(user)
   user.save()
   res.redirect('/login.html')
 
