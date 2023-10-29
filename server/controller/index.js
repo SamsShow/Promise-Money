@@ -4,45 +4,42 @@ const client = new MongoClient(url);
 const ejs= require('ejs')
 const path = require('path')
 const bcrypt = require('bcrypt')
+const model= require('../models/index')
+const User = model.User;
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb+srv://naveen:reliance@cluster0.1zo1yba.mongodb.net/?retryWrites=true&w=majority")
 
 exports.getLandingPage = (req, res) => {
     return res.status(200).sendFile(path.join(__dirname, "../../interface/index.html" ));
 }
 exports.signup = async (req, res)=>{
+
   const { name, email, phone, dob, address, password} = req.body;
+
   const hashedPassword = bcrypt.hashSync(password, 10);
-  const user={
+   const user = new User({
     name,
     email,
     phone,
     dob,
     address,
-    hashedPassword
-  }
-  try{
-    await client.connect();
-    console.log("Successfully connected to mongodb atlas");
-    const db = client.db("Cluster0");
-    const collection = db.collection("users");
-    const result = await collection.insertOne(user);
-    res.status(200).send("hello")
-    await client.close();
-  }
-  catch(err){
-     console.log(err);
-  }
+    hashedPassword: hashedPassword // Store the hashed password
+  })
+  user.save()
+  res.redirect('/login.html')
+
+
 }
 
 exports.login = async (req, res) => {
 
   try{
-    await client.connect();
-    console.log("Successfully connected to mongodb atlas");
-    const db = client.db("Cluster0");
-    const collection = db.collection("users");
+    console.log('login me hu')
+    console.log(req.body)
     
     const {email, password}= req.body;
-    const user = await collection.findOne({email: email})
+    const user = await User.findOne({email: email})
 
 
     const match = await bcrypt.compare(password, user.hashedPassword);
@@ -55,18 +52,16 @@ exports.login = async (req, res) => {
   catch(err){
     console.log(err);
   }
-  await client.close();
+
   
 };
 exports.showDashboard= async (req , res)=>{
 
   try{
-    await client.connect();
-    const db = client.db("Cluster0");
-    const users = db.collection("users");
+
     const email = req.params.email;
-    console.log(email)
-    const user = await users.findOne({ email: email });
+
+    const user = await User.findOne({email: email})
     console.log(user)
 
     ejs.renderFile(path.resolve(__dirname, '../../interface/dashboard.ejs'), {user},function(err, str){
