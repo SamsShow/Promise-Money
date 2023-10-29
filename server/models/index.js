@@ -1,6 +1,16 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
+const transactionSchema = new mongoose.Schema({
+    amount: {
+      type: Number,
+      required: true
+    },
+    date: {
+      type: Date,
+      required: true
+    }
+  });
 
 const userSchema = new Schema({
     name: {
@@ -26,10 +36,9 @@ const userSchema = new Schema({
     hashedPassword: {
         type:String,
         required: true
-    }
-    // transactions: [transactionSchema]
+    },
+    transactions: [transactionSchema]
   });
-  
 
 exports.User = mongoose.model('User', userSchema);
 
