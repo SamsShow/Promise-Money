@@ -1,0 +1,45 @@
+-- import: fifthtry.github.io/doc-site as ds
+-- import: gargajit.github.io/expander as e
+-- import: fifthtry.github.io/admonitions as cbox
+-- import: expander/assets
+-- import: fastn-community.github.io/winter-cs
+-- ds.page: FAQ's
+site-logo: $assets.files.images.logo3.png
+colors: $winter-cs.main
+
+-- e.box:  What is Promise Money?
+
+Promise Money is a web application designed to facilitate transparent financial transactions between businesses (shopkeepers) and customers. It aims to foster responsible financial behavior, providing features for Loan and Pay Later Tracking, Credit Scoring, Automated Reminders, and an Auto-Pay System.
+
+
+
+-- e.box:  How does Promise Money promote transparency in financial transactions?
+
+Promise Money offers transparent tracking of loans and pay-later arrangements between businesses and customers. All transactions are recorded and easily accessible to both parties, ensuring clarity and trust in financial dealings.
+
+-- e.box:  What is Credit Scoring, and how does it work within the application?
+
+Credit Scoring in Promise Money assesses a customer's creditworthiness based on their financial behavior. It helps businesses evaluate the risk associated with providing credit or loans, contributing to informed decision-making when extending financial services.
+
+-- e.box:  Can users receive automated reminders for pending payments or transactions?
+
+Yes, the application offers an automated reminder system to both businesses and customers. It sends notifications for upcoming payments, due dates, or any pending transactions, promoting timely and responsible financial actions.
+
+-- e.box:  How can I get started with Promise Money?
+
+To get started, users can sign up on the Promise Money platform and follow the guided steps to create their accounts, whether as a business or a customer, to begin utilizing its transparent financial services.
+
+-- cbox.info: TERMS & CONDITIONS
+
+1. Acceptance of Terms:
+By accessing and using the Promise Money web application, users agree to abide by the terms and conditions outlined herein. These terms govern all aspects of usage and are subject to periodic updates.
+
+2. User Accounts:
+a. Users must provide accurate, complete, and current information during registration.
+b. Each user is responsible for maintaining the confidentiality of their account credentials.
+c. Users are liable for all activities that occur under their accounts.
+
+3. Financial Transactions:
+a. Promise Money acts solely as a platform for facilitating transactions between businesses (shopkeepers) and customers.
+b. The application does not assume responsibility for any disputes, defaults, or losses arising from transactions between users.
+-- end: ds.page

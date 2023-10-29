@@ -1,0 +1,11 @@
+-- import: fastn as f
+
+-- f.package: expander
+
+-- f.dependency: fifthtry.github.io/doc-site as ds
+
+-- f.dependency: gargajit.github.io/expander
+
+-- f.dependency: fifthtry.github.io/admonitions
+
+-- f.dependency: fastn-community.github.io/winter-cs
