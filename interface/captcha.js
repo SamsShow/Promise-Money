@@ -1,5 +1,5 @@
 const axios = require('axios');
-const secretKey = '6LfyMNcoAAAAABmK8zCKLPkbyyKJrifDBRml_PYl';
+const secretKey = '';
 const recaptchaResponse = req.body['g-recaptcha-response'];
 
 axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
