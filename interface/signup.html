@@ -67,6 +67,7 @@
             name="confirm"
             required
           />
+          <span id="confirmMessage" class="text-red-500 text-sm"></span>
           <!-- end -->
 
           <!-- Captcha PART -->
@@ -74,7 +75,7 @@
           <!-- end -->
 
           <button
-            class="bg-[#5EC576] hover:bg-slate-700 text-white text-base rounded-3xl py-2.5 px-5 transition-colors w-full text-[19px]"
+            class="sign--up bg-[#5EC576] hover:bg-slate-700 text-white text-base rounded-3xl py-2.5 px-5 transition-colors w-full text-[19px] cursor-not-allowed"
             type="submit"
           >
             Sign Up
@@ -97,5 +98,6 @@
       </div>
     </div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="verify.js"></script>
   </body>
 </html>
